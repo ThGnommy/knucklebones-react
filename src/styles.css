@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: lightgoldenrodyellow;
+  width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: sans-serif;
+  text-align: center;
+  width: 100%;
+}
+
+.line:hover {
+  outline: 2px solid goldenrod;
+  cursor: pointer;
+}
+
+.line div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  margin: 5px;
+  background-color: #fff;
+}
+
+.dice-box {
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 60px;
+  background-color: #ccc;
+  border: 2px solid #000;
+  cursor: pointer;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.player-board {
+  display: flex;
+}
+
+.game-section {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.5),
+    2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
