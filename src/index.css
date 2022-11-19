@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html {
+    @apply h-screen font-eczar font-medium bg-gradient-to-r from-[#F2A65A] to-[#772F1A] bg-[length:400%] animate-background;
+  }
+
+  .app {
+    @apply flex flex-col items-center justify-between text-center w-full p-4;
+  }
+
+  .selectable:hover div {
+    @apply outline outline-2 outline-red-600 cursor-pointer;
+  }
+
+  .line div {
+    @apply flex items-center justify-center w-12 h-12 m-1 bg-transparent after:absolute after:text-2xl after:text-red-900 after:-z-20 after:content-['☓'];
+  }
+
+  .dice-box {
+    @apply relative grid place-items-end w-28 h-16 bg-stone-500 cursor-pointer italic text-lg
+    border-2 border-black ring-black ring-4 ring-offset-4 ring-offset-stone-400;
+  }
+
+  .dice {
+    @apply flex items-center justify-center w-9 h-9 text-slate-50 rounded-md drop-shadow-lg shadow-inner text-xl;
+  }
+
+  .dice-in-box {
+    @apply flex m-2 items-center justify-center w-9 h-9 bg-stone-700 text-neutral-50 rounded-md drop-shadow-lg shadow-inner;
+  }
+}
+
+/* ☉ */
