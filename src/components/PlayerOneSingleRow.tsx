@@ -1,15 +1,22 @@
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import {
+  RefObject,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { GameContext } from "../GameProvider";
 
 interface SingleRowProps {
   n: number;
-  state: any[];
+  state: number[][];
 }
 
 export const PlayerOneSingleRow = ({ n, state }: SingleRowProps) => {
-  const cell0Ref = useRef<any>();
-  const cell1Ref = useRef<any>();
-  const cell2Ref = useRef<any>();
+  const cell0Ref = useRef<HTMLDivElement>(null);
+  const cell1Ref = useRef<HTMLDivElement>(null);
+  const cell2Ref = useRef<HTMLDivElement>(null);
 
   const [exist, setExist] = useState(false);
 
@@ -22,7 +29,11 @@ export const PlayerOneSingleRow = ({ n, state }: SingleRowProps) => {
   const [player2Board] = player2;
 
   const checkNumbers = useCallback(
-    (cellRef: any, numCell: number, setState: any) => {
+    (
+      cellRef: RefObject<HTMLDivElement>,
+      numCell: number,
+      setState: (state: boolean) => void
+    ) => {
       const value = Number(cellRef?.current?.textContent);
 
       let copy = [...state[n]];

@@ -14,7 +14,7 @@
   }
 
   .selectable:hover div {
-    @apply outline outline-2 outline-red-600 cursor-pointer;
+    @apply outline outline-2 outline-red-700 cursor-pointer;
   }
 
   .line div {

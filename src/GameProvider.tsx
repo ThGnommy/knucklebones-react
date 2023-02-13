@@ -10,11 +10,11 @@ export const GameProvider = ({ children }: Props) => {
   const [turn, setTurn] = useState<1 | 2>(1);
   const [dice, setDice] = useState<number | null>(null);
 
-  const [player1Board, setPlayer1Board] = useState<any[]>([[], [], []]);
-  const [player2Board, setPlayer2Board] = useState<any[]>([[], [], []]);
+  const [player1Board, setPlayer1Board] = useState<[][]>([[], [], []]);
+  const [player2Board, setPlayer2Board] = useState<[][]>([[], [], []]);
 
-  const [p1Points, setP1Points] = useState<any[]>([[0], [0], [0]]);
-  const [p2Points, setP2Points] = useState<any[]>([[0], [0], [0]]);
+  const [p1Points, setP1Points] = useState<number[][]>([[0], [0], [0]]);
+  const [p2Points, setP2Points] = useState<number[][]>([[0], [0], [0]]);
 
   const [p1TotalPoints, setP1TotalPoints] = useState(0);
   const [p2TotalPoints, setP2TotalPoints] = useState(0);

@@ -25,7 +25,7 @@ export const PlayerTwoBoard = () => {
     let rowPoints: number = 0;
 
     const points = player1Board[row].reduce(
-      (accumulator: { [x: string]: any }, value: string | number) => {
+      (accumulator: { [x: string]: number }, value: string | number) => {
         return { ...accumulator, [value]: (accumulator[value] || 0) + 1 };
       },
       {}
@@ -50,7 +50,7 @@ export const PlayerTwoBoard = () => {
     let rowPoints: number = 0;
 
     const points = player2Board[row].reduce(
-      (accumulator: { [x: string]: any }, value: string | number) => {
+      (accumulator: { [x: string]: number }, value: string | number) => {
         return { ...accumulator, [value]: (accumulator[value] || 0) + 1 };
       },
       {}
@@ -103,7 +103,7 @@ export const PlayerTwoBoard = () => {
 
     player2Board[row].push(dice);
 
-    let updatedArr: any = [player2Board[0], player2Board[1], player2Board[2]];
+    let updatedArr = [player2Board[0], player2Board[1], player2Board[2]];
 
     setPlayer2Board(updatedArr);
     setTurn(turnToSet);

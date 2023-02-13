@@ -11,12 +11,14 @@ export const Player1Profile = ({ name }: PlayerProfileProps) => {
     playerTurn,
     player1Points,
     player1TotalPoints,
+    boardState,
   } = useContext(GameContext);
 
   const [dice, setDice] = diceCurrentNumber;
   const [turn] = playerTurn;
   const [p1Points] = player1Points;
   const [p1TotalPoints, setP1TotalPoints] = player1TotalPoints;
+  const [boardIsFull] = boardState;
 
   const diceStyles =
     turn === 1 ? (dice ? "dice-in-box" : "dice-in-box animate-bounce") : "";
@@ -45,7 +47,11 @@ export const Player1Profile = ({ name }: PlayerProfileProps) => {
   }, [calculatePoints]);
 
   return (
-    <div className="sm:place-self-end place-self-auto">
+    <div
+      className={`sm:place-self-end place-self-auto ${
+        boardIsFull ? "invisible" : "visible"
+      }`}
+    >
       <h2 className="italic font-bold text-3xl text-stone-900 py-4">{name}</h2>
       <h2 className="mb-4 text-2xl font-semibold">{p1TotalPoints}</h2>
       {/* Dice place here */}
